@@ -1,5 +1,5 @@
-# Mis GIFs
-CRUD Libreria en Angular implementada con Material y Firebase Realtime Database
+# Libreria Angular
+CRUD de una libreria en Angular implementada con Material y Firebase Realtime Database
 
 ## Acerca del proyecto
 * Instalar dependencia utilizando ```npm install```
