@@ -9,6 +9,7 @@
   <form [formGroup]="editBookForm" (ngSubmit)="updateBook()" novalidate>
     <mat-card>
       <div class="controlers-wrapper">
+        <app-image-upload formControlName="image" class="center"></app-image-upload>
         <!-- Book name -->
         <mat-form-field class="example-full-width">
           <input matInput placeholder="Nombre del libro" formControlName="book_name">
@@ -77,7 +78,7 @@
 
         <!-- Add languages -->
         <mat-form-field class="multiple-items">
-          <mat-chip-list #chipList>
+          <mat-chip-list #chipList formControlName="languages">
             <mat-chip *ngFor="let lang of languageArray" [selectable]="selectable" [removable]="removable"
               (removed)="remove(lang)">
               {{lang.name}}

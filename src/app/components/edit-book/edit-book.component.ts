@@ -42,6 +42,9 @@ export class EditBookComponent implements OnInit {
   ) { 
     var id = this.actRoute.snapshot.paramMap.get('id');
     this.bookApi.GetBook(id).valueChanges().subscribe(data => {
+      console.log(data);
+      if(!data.hasOwnProperty('languages'))
+        data.languages=[];
       this.languageArray = data.languages;
       this.editBookForm.setValue(data);
     })
@@ -55,8 +58,9 @@ export class EditBookComponent implements OnInit {
       author_name: ['', [Validators.required]],
       publication_date: ['', [Validators.required]],
       binding_type: ['', [Validators.required]],
-      in_stock: ['Yes'],
-      languages: ['']
+      in_stock: ['Si'],
+      languages: [''],
+      image: ['https://voice.global/wp-content/plugins/wbb-publications/public/assets/img/placeholder.jpg']
     })
   }
 

@@ -1,0 +1,17 @@
+#book-img {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height:100px;
+    width: 80px;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+
+.action-btn
+{
+    width: 100%;
+}
+
+.mat-cell {
+    padding-right: 23px;
+  }

@@ -4,6 +4,7 @@ import { MatChipInputEvent } from '@angular/material';
 import { BookService } from './../../shared/book.service';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
+
 export interface Language {
   name: string;
 }
@@ -13,6 +14,7 @@ export interface Language {
   templateUrl: './add-book.component.html',
   styleUrls: ['./add-book.component.css']
 })
+
 export class AddBookComponent implements OnInit {
   visible = true;
   selected = false;
@@ -27,6 +29,7 @@ export class AddBookComponent implements OnInit {
   bookForm: FormGroup;
   BindingType: any = ['Tapa blanda', 'Tapa dura', 'Encuadernación a caballete', 'Encuadernación a espiral'];
 
+  
   ngOnInit() { 
     this.bookApi.GetBookList();
     this.submitBookForm();
@@ -53,14 +56,16 @@ export class AddBookComponent implements OnInit {
       author_name: ['', [Validators.required]],
       publication_date: ['', [Validators.required]],
       binding_type: ['', [Validators.required]],
-      in_stock: ['Yes'],
-      languages: [this.languageArray]
+      in_stock: ['Si'],
+      languages: [this.languageArray],
+      image: ['https://voice.global/wp-content/plugins/wbb-publications/public/assets/img/placeholder.jpg']
     })
+    console.log(this.bookForm.value);
   }
 
   /* Get errors */
   public handleError = (controlName: string, errorName: string) => {
-    return this.bookForm.controls[controlName].hasError(errorName);
+      return this.bookForm.controls[controlName].hasError(errorName);
   }
 
   /* Add dynamic languages */
@@ -99,9 +104,9 @@ export class AddBookComponent implements OnInit {
   /* Submit book */
   submitBook() {
     if (this.bookForm.valid){
+      console.log(this.bookForm.value);
       this.bookApi.AddBook(this.bookForm.value)
       this.resetForm();
     }
   }
-
 }

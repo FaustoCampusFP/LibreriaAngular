@@ -1,0 +1,7 @@
+<div class="center">
+    <img [src]="base64Image" />
+</div>
+<br>
+<div class="center">
+    <button class="center" *ngIf="!isDisabled" mat-flat-button color="" (click)="captureImage()" type='button'>Capturar Portada</button>
+</div>

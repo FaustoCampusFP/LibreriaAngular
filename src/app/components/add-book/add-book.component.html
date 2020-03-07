@@ -10,6 +10,7 @@
      <!-- Left block -->
      <mat-card>
        <div class="controlers-wrapper">
+         <app-image-upload formControlName="image" class="center"></app-image-upload>
          <!-- Book name -->
          <mat-form-field class="example-full-width">
            <input matInput placeholder="Nombre del libro" formControlName="book_name">
@@ -79,6 +80,9 @@
 
          <!-- Add languages -->
          <mat-form-field class="multiple-items">
+          <mat-error *ngIf="handleError('languages', 'required')">
+            El libro debe de tener un <strong>ISBN de 10 dígitos</strong>
+          </mat-error>
            <mat-chip-list #chipList>
              <mat-chip *ngFor="let lang of languageArray" [selectable]="selectable" [removable]="removable"
                (removed)="remove(lang)">
@@ -94,14 +98,14 @@
            </i>
          </mat-form-field>
        </div>
+        
      </mat-card>
-
      <!-- Submit & Reset -->
      <mat-card>
        <div class="full-wrapper button-wrapper">
          <div class="button-wrapper">
-           <button mat-flat-button color="accent">Añadir</button>
-           <button mat-flat-button color="" (click)="resetForm()">Limpiar</button>
+           <button mat-flat-button color="accent" >Añadir</button>
+           <button mat-flat-button color="" (click)="resetForm()" type='button'>Limpiar</button>
          </div>
        </div>
      </mat-card>

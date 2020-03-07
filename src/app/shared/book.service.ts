@@ -21,7 +21,8 @@ export class BookService {
       publication_date: book.publication_date,
       binding_type: book.binding_type,
       in_stock: book.in_stock,
-      languages: book.languages
+      languages: book.languages,
+      image: book.image
     })
     .catch(error => {
       this.errorMgmt(error);

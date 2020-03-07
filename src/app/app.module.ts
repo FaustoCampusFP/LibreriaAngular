@@ -25,6 +25,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
 import { PoliciesComponent } from './components/policies/policies.component';
 
+/* Camera support in ionic*/
+import { Camera } from '@ionic-native/camera/ngx';
+import { ImageUploadComponent } from './components/image-upload/image-upload.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +36,8 @@ import { PoliciesComponent } from './components/policies/policies.component';
     EditBookComponent,
     BookListComponent,
     FooterComponent,
-    PoliciesComponent
+    PoliciesComponent,
+    ImageUploadComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,7 @@ import { PoliciesComponent } from './components/policies/policies.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [BookService],
+  providers: [Camera, BookService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

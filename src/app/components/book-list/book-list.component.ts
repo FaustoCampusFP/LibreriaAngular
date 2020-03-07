@@ -15,9 +15,10 @@ export class BookListComponent {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   BookData: any = [];
   displayedColumns: any[] = [
+    'book_img',
     'book_name',
     'author_name', 
-    'publication_date',
+    //'publication_date',
     'in_stock',
     'action'
   ];

@@ -7,4 +7,5 @@ export interface Book {
    binding_type: string;
    in_stock: string;
    languages: Array<string>;
+   image: string;
 }

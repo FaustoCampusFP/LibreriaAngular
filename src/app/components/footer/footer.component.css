@@ -4,9 +4,8 @@ footer{
 
 p{
     margin-top: 0px;
-    padding-top: 1em;
-    padding-right: 1em;
-    padding-bottom: 1em;
+    margin-bottom: 0px;
+    padding: 1em;
     color: #B3B3B3;
     font-size: 0.7em;
 }
