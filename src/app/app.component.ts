@@ -22,7 +22,7 @@ export class AppComponent {
   @ViewChild('sidenav') sidenav: MatSidenav;
 
   ngOnInit() {
-    this.isApp = (!document.URL.startsWith('http://localhost:8100'));
+    this.isApp = (!document.URL.startsWith('http') || !document.URL.startsWith('http://localhost:8'));
     if(!this.isApp)
     {
       let cc = window as any;

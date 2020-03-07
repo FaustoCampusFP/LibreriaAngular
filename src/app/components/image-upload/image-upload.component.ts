@@ -17,7 +17,7 @@ export class ImageUploadComponent implements ControlValueAccessor {
   isApp: boolean;
 
   constructor(private camera: Camera){
-    this.isApp = (!document.URL.startsWith('http://localhost:8100'));
+    this.isApp = (!document.URL.startsWith('http') || !document.URL.startsWith('http://localhost:8'));
     if(!this.isApp) {
       this.isDisabled = true;
     }
